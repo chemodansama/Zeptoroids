@@ -19,51 +19,51 @@ namespace zeptoroids {
 
 class Spaceship {
 public:
-	Spaceship(const std::vector<GLfloat> &vertices,
-			const std::vector<GLushort> &indices,
-			const std::vector<GLushort> &flame,
-			float scale);
+    Spaceship(const std::vector<GLfloat> &vertices,
+            const std::vector<GLushort> &indices,
+            const std::vector<GLushort> &flame,
+            float scale);
 
-	void Draw(float w, float h);
-	void Update(int stepsPerSec, float w, float h);
+    void Draw(float w, float h);
+    void Update(int stepsPerSec, float w, float h);
 
-	bool HasCollision(const Asteroid *asteroid);
+    bool HasCollision(const Asteroid *asteroid);
 
-	void TurnLeft();
-	void TurnRight();
-	void TurnStopLeft();
-	void TurnStopRight();
+    void TurnLeft();
+    void TurnRight();
+    void TurnStopLeft();
+    void TurnStopRight();
 
     bool HasInvulnerability();
 
-	void Forward();
-	void Stop();
+    void Forward();
+    void Stop();
 
-	float GetX() { return x; }
-	float GetY() { return y; }
-	float GetAngle() { return angle; }
+    float GetX() { return x; }
+    float GetY() { return y; }
+    float GetAngle() { return angle; }
 
 private:
-	const std::vector<GLfloat> &vertices;
-	const std::vector<GLushort> &indices;
-	const std::vector<GLushort> &flame;
+    const std::vector<GLfloat> &vertices;
+    const std::vector<GLushort> &indices;
+    const std::vector<GLushort> &flame;
 
-	float x;
-	float y;
-	float angle;
+    float x;
+    float y;
+    float angle;
 
-	float scale;
+    float scale;
 
-	bool turnLeft;
-	bool turnRight;
-	bool forward;
+    bool turnLeft;
+    bool turnRight;
+    bool forward;
 
-	float velocity;
-	long birthTime;
+    float velocity;
+    long birthTime;
 
-	BBox bbox;
+    BBox bbox;
 
-	void DrawAt(float x, float y);
+    void DrawAt(float x, float y);
 };
 
 } /* namespace zeptoroids */

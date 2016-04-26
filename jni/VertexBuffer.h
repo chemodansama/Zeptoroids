@@ -15,23 +15,23 @@ namespace zeptoroids {
 
 class VertexBuffer {
 public:
-	VertexBuffer();
-	~VertexBuffer();
+    VertexBuffer();
+    ~VertexBuffer();
 
-	void Init(GLenum target, const std::vector<GLfloat> &data);
+    void Init(GLenum target, const std::vector<GLfloat> &data);
 
-	void Bind(GLenum target) const {
-		glBindBuffer(target, buffer);
-	}
+    void Bind(GLenum target) const {
+        glBindBuffer(target, buffer);
+    }
 
-	static void Unbind(GLenum target) {
-		glBindBuffer(target, 0);
-	}
+    static void Unbind(GLenum target) {
+        glBindBuffer(target, 0);
+    }
 private:
-	GLuint buffer;
+    GLuint buffer;
 
-	VertexBuffer(const VertexBuffer &vb) = delete;
-	VertexBuffer operator=(const VertexBuffer &vb) = delete;
+    VertexBuffer(const VertexBuffer &vb) = delete;
+    VertexBuffer operator=(const VertexBuffer &vb) = delete;
 };
 
 } /* namespace zeptoroids */

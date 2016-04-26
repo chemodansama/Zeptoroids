@@ -23,17 +23,17 @@ public:
     static std::unique_ptr<AsteroidTemplate> Create(const std::vector<float> &vertices,
             T&& indices, V&& renderIndices);
 
-	void Draw(float x, float y, float scale) const;
-	bool IsInside(float x, float y) const;
+    void Draw(float x, float y, float scale) const;
+    bool IsInside(float x, float y) const;
 
-	const BBox &GetBBox() const;
+    const BBox &GetBBox() const;
 
 private:
-	const std::vector<float> &vertices;
-	std::vector<GLushort> indices;
-	std::vector<GLushort> renderIndices;
+    const std::vector<float> &vertices;
+    std::vector<GLushort> indices;
+    std::vector<GLushort> renderIndices;
 
-	BBox bbox;
+    BBox bbox;
 
     AsteroidTemplate(const std::vector<float> &vertices);
 };

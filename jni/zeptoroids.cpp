@@ -25,20 +25,20 @@ JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_ZrRenderer_nativeInit
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_ZrRenderer_nativeResize
   (JNIEnv *, jclass, jint w, jint h)
 {
-	game->Resize(w, h);
+    game->Resize(w, h);
 }
 
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_ZrRenderer_nativeRender
   (JNIEnv *, jclass)
 {
-	game->Render();
+    game->Render();
 }
 
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_ZrRenderer_nativeDone
   (JNIEnv *, jclass)
 {
-	delete game;
-	game = 0;
+    delete game;
+    game = 0;
 }
 
 // =====================  ZrSurfaceView ========================================
@@ -63,28 +63,28 @@ JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_ZrSurfaceView_nativeToggleP
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_MainActivity_nativePointerDown
   (JNIEnv * env, jclass cls, jint pointerId, jfloat x, jfloat y)
 {
-	LOGI("pointerDown %d %f %f", pointerId, x, y);
-	if (game) {
-		game->HandlePointerDown(pointerId, x, y);
-	}
+    LOGI("pointerDown %d %f %f", pointerId, x, y);
+    if (game) {
+        game->HandlePointerDown(pointerId, x, y);
+    }
 }
 
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_MainActivity_nativePointerUp
   (JNIEnv * env, jclass cls, jint pointerId)
 {
-	LOGI("pointerUp %d", pointerId);
-	if (game) {
-		game->HandlePointerUp(pointerId);
-	}
+    LOGI("pointerUp %d", pointerId);
+    if (game) {
+        game->HandlePointerUp(pointerId);
+    }
 }
 
 JNIEXPORT void JNICALL Java_org_zeptotest_zeptoroids_MainActivity_nativePointerDone
   (JNIEnv *, jclass)
 {
-	LOGI("pointerDone");
-	if (game) {
-		game->HandlePointerDone();
-	}
+    LOGI("pointerDone");
+    if (game) {
+        game->HandlePointerDone();
+    }
 }
 
 #ifdef __cplusplus

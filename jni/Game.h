@@ -25,51 +25,51 @@ namespace zeptoroids {
 
 class Game {
 public:
-	Game();
+    Game();
 
-	void Render();
-	void Resize(int w, int h);
+    void Render();
+    void Resize(int w, int h);
 
-	void HandlePointerDown(int pointerId, float sX, float sY);
-	void HandlePointerUp(int pointerId);
-	void HandlePointerDone();
+    void HandlePointerDown(int pointerId, float sX, float sY);
+    void HandlePointerUp(int pointerId);
+    void HandlePointerDone();
 private:
-	std::vector<GLfloat> vertices;
+    std::vector<GLfloat> vertices;
 
-	int sWidth;
-	int sHeight;
-	long initTime;
-	long lastFrame;
+    int sWidth;
+    int sHeight;
+    long initTime;
+    long lastFrame;
 
-	VertexBuffer buffer;
+    VertexBuffer buffer;
 
-	int score;
-	int lives;
-	int wave;
+    int score;
+    int lives;
+    int wave;
 
-	std::vector<std::unique_ptr<AsteroidTemplate>> templates;
-	std::list<std::unique_ptr<Asteroid>> asteroids;
+    std::vector<std::unique_ptr<AsteroidTemplate>> templates;
+    std::list<std::unique_ptr<Asteroid>> asteroids;
 
-	Ui ui;
-	std::unique_ptr<Spaceship> ship;
+    Ui ui;
+    std::unique_ptr<Spaceship> ship;
 
-	Bullets bullets;
-	Explosions explosions;
+    Bullets bullets;
+    Explosions explosions;
 
-	void SpawnAsteroids(int count);
-	void CreateTemplates();
+    void SpawnAsteroids(int count);
+    void CreateTemplates();
 
-	void Update();
-	void Step();
-	void Draw();
+    void Update();
+    void Step();
+    void Draw();
 
-	void DrawNumber(int num);
-	void DrawScore(float w);
-	void DrawLives(float w);
-	void DrawGameOver(float w);
+    void DrawNumber(int num);
+    void DrawScore(float w);
+    void DrawLives(float w);
+    void DrawGameOver(float w);
 
-	void UpdateShip(float w);
-	void UpdateBullets(float w);
+    void UpdateShip(float w);
+    void UpdateBullets(float w);
 };
 
 } /* namespace zeptoroids */

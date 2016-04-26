@@ -19,19 +19,19 @@ namespace zeptoroids {
 
 class Bullet {
 public:
-	Bullet(float x, float y, float angle, int stepsPerSecond);
+    Bullet(float x, float y, float angle, int stepsPerSecond);
 
-	float GetX() const { return x; }
-	float GetY() const { return y; }
-	bool IsAlive(long currentTime) const;
+    float GetX() const { return x; }
+    float GetY() const { return y; }
+    bool IsAlive(long currentTime) const;
 
-	void Update(float w, float h);
+    void Update(float w, float h);
 private:
-	float x;
-	float y;
-	float vx;
-	float vy;
-	long birthTime;
+    float x;
+    float y;
+    float vx;
+    float vy;
+    long birthTime;
 };
 
 class Bullets {
@@ -44,15 +44,15 @@ private:
     Bullets(const Bullets &) = delete;
 
 public:
-	Bullets();
+    Bullets();
 
-	void Add(float x, float y, float angle, int stepsPerSecond);
-	void Remove(Bullet *);
-	void Update(float w, float h);
-	void Draw() const;
+    void Add(float x, float y, float angle, int stepsPerSecond);
+    void Remove(Bullet *);
+    void Update(float w, float h);
+    void Draw() const;
 
-	auto begin() -> decltype(bullets.begin()) const { return bullets.begin(); }
-	auto end() -> decltype(bullets.begin()) const { return bullets.end(); }
+    auto begin() -> decltype(bullets.begin()) const { return bullets.begin(); }
+    auto end() -> decltype(bullets.begin()) const { return bullets.end(); }
 };
 
 } /* namespace zeptoroids */

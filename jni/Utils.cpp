@@ -19,12 +19,12 @@ long GetTime(void) {
 }
 
 float CycleCoords(float coord, float bound) {
-	if (coord > bound) {
-		coord -= 2 * bound;
-	} else if (coord < -bound) {
-		coord += 2 * bound;
-	}
-	return coord;
+    if (coord > bound) {
+        coord -= 2 * bound;
+    } else if (coord < -bound) {
+        coord += 2 * bound;
+    }
+    return coord;
 }
 
 }

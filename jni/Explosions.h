@@ -16,23 +16,23 @@ namespace zeptoroids {
 
 class Explosions {
 public:
-	Explosions(int stepsPerSec) : stepsPerSec(stepsPerSec) {}
-	void AddExplosion(float x, float y);
-	void Draw();
-	void Update();
+    Explosions(int stepsPerSec) : stepsPerSec(stepsPerSec) {}
+    void AddExplosion(float x, float y);
+    void Draw();
+    void Update();
 private:
-	// points per explosion
-	static const int N = 32;
+    // points per explosion
+    static const int N = 32;
 
-	std::vector<GLfloat> vertices;
-	std::list<GLfloat> points;
-	std::list<GLfloat> velocities;
-	std::list<long> births;
+    std::vector<GLfloat> vertices;
+    std::list<GLfloat> points;
+    std::list<GLfloat> velocities;
+    std::list<long> births;
 
-	int stepsPerSec;
+    int stepsPerSec;
 
-	void operator=(const Explosions &);
-	Explosions(const Explosions &);
+    void operator=(const Explosions &);
+    Explosions(const Explosions &);
 };
 
 } /* namespace zeptoroids */

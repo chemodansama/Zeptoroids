@@ -15,40 +15,40 @@
 namespace zeptoroids {
 
 enum UiEvent {
-	NONE,
-	TURN_LEFT, TURN_LEFT_DONE,
-	TURN_RIGHT, TURN_RIGHT_DONE,
-	SHOOT, SHOOT_DONE,
-	FORWARD, FORWARD_DONE
+    NONE,
+    TURN_LEFT, TURN_LEFT_DONE,
+    TURN_RIGHT, TURN_RIGHT_DONE,
+    SHOOT, SHOOT_DONE,
+    FORWARD, FORWARD_DONE
 };
 
 class Ui {
 public:
-	Ui();
-	~Ui();
+    Ui();
+    ~Ui();
 
-	void Draw();
-	void Resize(int w, int h);
+    void Draw();
+    void Resize(int w, int h);
 
-	UiEvent HandlePointerDown(int pointerId, float sX, float sY);
-	UiEvent HandlePointerUp(int pointerId);
-	void HandlePointerDone();
+    UiEvent HandlePointerDown(int pointerId, float sX, float sY);
+    UiEvent HandlePointerUp(int pointerId);
+    void HandlePointerDone();
 
-	bool IsLeft() { return leftPointer >= 0; }
-	bool IsRight() { return rightPointer >= 0; }
-	bool IsShooting() { return shootPointer >= 0; }
-	bool IsAccel() { return accelPointer >= 0; }
+    bool IsLeft() { return leftPointer >= 0; }
+    bool IsRight() { return rightPointer >= 0; }
+    bool IsShooting() { return shootPointer >= 0; }
+    bool IsAccel() { return accelPointer >= 0; }
 private:
-	int leftPointer;
-	int rightPointer;
-	int shootPointer;
-	int accelPointer;
+    int leftPointer;
+    int rightPointer;
+    int shootPointer;
+    int accelPointer;
 
-	int sWidth;
-	int sHeight;
+    int sWidth;
+    int sHeight;
 
-	VertexBuffer vb;
-	std::vector<GLushort> indices;
+    VertexBuffer vb;
+    std::vector<GLushort> indices;
 };
 
 } /* namespace zeptoroids */

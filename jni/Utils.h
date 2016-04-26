@@ -26,11 +26,11 @@ static size_t length(T(&arr)[N]) { return N; }
 namespace zeptoroids {
 
 namespace Utils {
-	long GetTime(void);
-	float CycleCoords(float coord, float bound);
-	static float Randf(float min, float max) {
-		return (max - min) * rand() / RAND_MAX + min;
-	}
+    long GetTime(void);
+    float CycleCoords(float coord, float bound);
+    static float Randf(float min, float max) {
+        return (max - min) * rand() / RAND_MAX + min;
+    }
 
     template <typename T, typename ... Args>
     std::unique_ptr<T> make_unique(Args&& ... args) {
