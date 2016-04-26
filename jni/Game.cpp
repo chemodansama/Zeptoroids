@@ -100,8 +100,8 @@ void Game::CreateTemplates() {
 			renderIndices.push_back(index++);
 		}
 
-		templates.emplace_back(
-				new AsteroidTemplate(vertices, indices, renderIndices));
+		auto t = AsteroidTemplate::Create(vertices, std::move(indices), std::move(renderIndices));
+		templates.emplace_back(std::move(t));
 	}
 	LOGI("Templates created");
 }

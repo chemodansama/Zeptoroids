@@ -9,6 +9,7 @@
 #define BBOX_H_
 
 #include <vector>
+#include <limits>
 #include <GLES/gl.h>
 
 namespace zeptoroids {
@@ -18,8 +19,8 @@ public:
 	static BBox ComputeBBox(const std::vector<GLfloat> &vertices,
 			const std::vector<GLushort> &indices);
 
-	BBox(float x, float y, float ex, float ey) : x(x), y(y), ex(ex), ey(ey) {
-	}
+	BBox(float x, float y, float ex, float ey) : x(x), y(y), ex(ex), ey(ey) {}
+	BBox();
 
 	float GetX() const { return x; }
 	float GetY() const { return y; }

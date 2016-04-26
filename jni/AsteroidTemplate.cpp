@@ -27,12 +27,8 @@ float CrossProduct(float x0, float y0, float x1, float y1, float x2, float y2) {
 
 namespace zeptoroids {
 
-AsteroidTemplate::AsteroidTemplate(const std::vector<float> &vertices,
-        std::vector<GLushort> indices,
-        std::vector<GLushort> renderVertices)
-        : vertices(vertices)
-        , indices(indices), renderIndices(renderVertices)
-        , bbox(BBox::ComputeBBox(vertices, renderVertices)) {
+AsteroidTemplate::AsteroidTemplate(const std::vector<float> &vertices)
+        : vertices(vertices) {
 }
 
 bool AsteroidTemplate::IsInside(float x, float y) const {

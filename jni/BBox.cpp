@@ -38,4 +38,11 @@ BBox BBox::ComputeBBox(const std::vector<GLfloat> &vertices,
 	return BBox(minx + ex, miny + ey, ex, ey);
 }
 
+BBox::BBox()
+        : x(0)
+        , y(0)
+        , ex(std::numeric_limits<float>::max())
+        , ey(std::numeric_limits<float>::max()) {
+}
+
 } /* namespace zeptoroids */
