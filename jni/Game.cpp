@@ -141,7 +141,6 @@ Game::Game() :
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glDisableClientState(GL_COLOR_ARRAY);
 	glDisableClientState(GL_NORMAL_ARRAY);
-	glDisableClientState(GL_ELEMENT_ARRAY_BUFFER);
 
 	buffer.Init(GL_ARRAY_BUFFER, vertices);
 }
